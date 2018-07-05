@@ -35,6 +35,16 @@ dependencies {
     // end::tests[]
 }
 
+artifactory {
+    publish {
+        defaults {      
+        	publications('mavenJava')	
+        	publishArtifacts = true	
+        	publishPom = true
+        }
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
