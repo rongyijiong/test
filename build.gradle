@@ -35,3 +35,12 @@ dependencies {
     // end::tests[]
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId bootJar.baseName
+        }
+    }
+}
+
