@@ -35,30 +35,4 @@ dependencies {
     // end::tests[]
 }
 
-// jfrog publish
-artifactory {
-    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
-    publish {
-        repository {
-            repoKey = 'phishbot-dev-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true          
-        }
-        defaults {      
-        	publications('mavenJava')	
-        	publishArtifacts = true	
-        	publishPom = true
-        }
-    }
-}
-// jfrog publish
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifactId bootJar.baseName
-        }
-    }
-}
 
